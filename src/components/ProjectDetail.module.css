@@ -1,0 +1,22 @@
+.dialog { width: min(880px, calc(100% - 2rem)); max-height: 85dvh; box-sizing: border-box; padding: clamp(1.2rem, 4vw, 2.5rem); color: #302c24; background: #f1e6d6; border: 1px solid #fff4d9b3; border-radius: 20px; box-shadow: 0 25px 100px #100b0766; overscroll-behavior: contain; }
+.dialog::backdrop { background: #20170f9c; backdrop-filter: blur(4px); }
+.header { display: flex; align-items: start; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
+.header p { margin: 0 0 .6rem; text-transform: uppercase; font-size: .7rem; letter-spacing: .12em; }
+.header h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; text-wrap: balance; }
+.close { flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #8c7766; border-radius: 50%; background: transparent; color: inherit; font-size: 1.5rem; cursor: pointer; }
+.content { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); gap: 2rem; }
+.content figure { margin: 0; }
+.content img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+.content figcaption { margin-top: .6rem; font-size: .75rem; line-height: 1.5; color: #625445; }
+.pending { padding: .65rem .8rem; border: 1px solid #9d8166; border-radius: 6px; font-size: .75rem; margin: 0 0 1rem; }
+.description { margin-top: 0; line-height: 1.7; font-size: 1rem; }
+.content h3 { font-size: 1rem; margin-top: 1.5rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; font-size: .8rem; }
+.tags li { border: 1px solid #b6a38f; padding: .4rem .6rem; border-radius: 20px; }
+.note { margin-top: 1.5rem; font-size: .8rem; color: #665849; line-height: 1.6; }
+.catalogue { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.catalogue button { width: 100%; height: 100%; padding: .7rem; border: 1px solid #b39a80; border-radius: 7px; background: #fffcf44d; text-align: left; color: inherit; cursor: pointer; }
+.catalogue img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 3px; }
+.catalogue span, .catalogue small { display: block; margin-top: .7rem; line-height: 1.4; }
+.catalogue small { font-size: .75rem; color: #6f5841; }
+@media (max-width: 600px) { .content { grid-template-columns: 1fr; gap: 1rem; } .content figure { max-width: 250px; } .catalogue { grid-template-columns: 1fr; } .catalogue button { display: grid; grid-template-columns: 80px 1fr; gap: .5rem 1rem; } .catalogue img { grid-row: 1 / 3; } }

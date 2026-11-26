@@ -1,0 +1,13 @@
+Herramienta: image_gen integrada. Un recurso original por llamada.
+Originales PNG y versiones WebP optimizadas en esta carpeta.
+Las versiones de entrega WebP no cambian la composición; se comprimen y reducen
+a 480 px para usarse como carátulas. El fondo conserva 1536 px.
+
+ARQUITECTURA / Proyectos DAW
+Square photographic album artwork, no lettering, no border, no typography. Dreamlike minimalist glass-and-concrete architectural passage in dusty rose and coral, translucent blue glass planes, natural golden sunlight, precise shadows and cinematic film grain. Premium contemporary architecture photography, physically realistic materials, restrained composition, pastel pink, peach, lilac and cool blue. The whole frame is the artwork. Not an icon, not a mockup.
+
+NUBES / Música
+Square photographic music album artwork, no lettering, no typography, no border. Serene pale blue sky with luminous fluffy peach pink clouds, two extremely thin white diagonal airplane contrails high in the sky, shot on warm analog color film, delicate grain, atmospheric expansive quiet composition, natural believable light, dreamy but genuinely photographic. The entire frame is the sky artwork, not a mockup, no symbols or icons.
+
+PALMERAS / Contacto
+Square photographic album artwork, no lettering, no border, no typography. Tall silhouetted palm trees against a coral pink and muted mauve sunset sky, cropped editorial analog photograph, cinematic film grain, premium restrained composition, warm dusky atmosphere, subtle cloud texture. Actual photorealistic landscape photography, not illustration or icon, no mockup.

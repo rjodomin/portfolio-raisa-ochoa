@@ -1,0 +1,23 @@
+/* Las carátulas son recortes de la escena: encajan con sus baldas y sus discos. */
+.shelf { position: absolute; left: calc(0% - var(--crop-offset)); top: 0; width: calc(100% * var(--crop-scale)); height: 100%; pointer-events: none; z-index: 4; }
+.cover { position: absolute; appearance: none; padding: 0; border: 0; background: none; color: var(--ink); text-align: left; cursor: pointer; pointer-events: auto; transform-origin: bottom; transition: transform .25s, box-shadow .25s; }
+.sleeve { display: block; position: absolute; inset: 0; width: 100%; height: 100%; clip-path: var(--sleeve-clip); filter: brightness(var(--lamp-gain, 1)); user-select: none; transition: opacity 1s, filter 1s; }
+.day { opacity: var(--day-opacity, 0); }
+.cloudy { opacity: var(--cloudy-opacity, 0); }
+.night { opacity: var(--night-opacity, 0); }
+.caption { position: absolute; left: 9%; right: 14%; bottom: 7%; color: var(--cover-ink, var(--ink)); line-height: 1.15; pointer-events: none; }
+.number { display: block; margin-bottom: .15em; font-size: max(11px, .85cqw); }
+.title { display: block; overflow-wrap: anywhere; font-size: clamp(11px, .74cqw, 16px); font-weight: 600; text-transform: uppercase; }
+.arrow { display: grid; place-items: center; position: absolute; right: 8%; bottom: 8%; width: 1.15cqw; height: 1.15cqw; border: 1px solid currentColor; border-radius: 50%; font-size: .9cqw; opacity: .75; color: var(--cover-ink, var(--ink)); }
+.cover:hover { transform: translateY(-3px); filter: drop-shadow(0 6px 5px #1d130d55); }
+.cover.selected { transform: translateY(-4px); box-shadow: 0 0 0 2px #fff0c7, 0 7px 15px #20130c55; }
+.cover.selected .arrow { opacity: 1; }
+.cover:focus-visible { outline: 2px solid #fff6de; outline-offset: 4px; box-shadow: 0 0 0 6px #455239; }
+@media (max-width: 900px), (max-aspect-ratio: 23/20) {
+  .title { font-size: clamp(10px, 2.1vw, 14px); }
+  .number { font-size: clamp(10px, 2.2vw, 14px); }
+  .arrow { width: 12px; height: 12px; font-size: 9px; right: 5%; bottom: 6%; }
+  .caption { right: 14%; bottom: 6%; }
+}
+@media (prefers-reduced-motion: reduce) { .cover, .sleeve { transition: none; } .cover:hover, .cover.selected { transform: none; } }
+

@@ -1,0 +1,20 @@
+/* La madera, el brazo y la tapa son fotográficos. Solo el disco es una capa móvil. */
+.console { position: absolute; left: calc(55.85% * var(--crop-scale) - var(--crop-offset)); top: 67.9%; width: calc(15.2% * var(--crop-scale)); height: 5.3%; z-index: 5; }
+.platter { position: absolute; inset: 0; border-radius: 50%; isolation: isolate; }
+.disc { position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1; border-radius: 50%; background: repeating-radial-gradient(circle, #121414 0 1px, #30302b 2px, #111311 3px); opacity: 0; animation: spin 3s linear infinite paused; filter: brightness(var(--disc-light, 1)); }
+/* Un contenedor escalado conserva la geometría circular durante el giro. */
+.platter { height: auto; aspect-ratio: 1; transform: scaleY(.16) rotate(-2deg); transform-origin: top; clip-path: polygon(0 0, 100% 0, 100% 80%, 78% 85%, 78% 100%, 0 100%); }
+.loaded { opacity: 1; }
+.spinning { animation-play-state: running; }
+.label { position: absolute; inset: 33%; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #ffffff30, transparent 50%), var(--label); display: grid; place-items: center; color: #362c26; font-size: .46cqw; }
+.label > span { transform: translateY(-25%); letter-spacing: .04em; }
+.label i { width: 3px; height: 3px; background: #ddc8a6; border-radius: 50%; box-shadow: 0 0 0 1px #665a46; position: absolute; left: 50%; top: 50%; }
+.reflection { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(transparent 0 12%, #e8d6bc22 20%, transparent 30% 60%, #ffe8bd22 68%, transparent 77%); pointer-events: none; }
+.transport { position: absolute; right: -21%; top: 60%; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 1px solid #f5e5c594; color: #fff5e4; background: #221f18b5; backdrop-filter: blur(5px); border-radius: 50%; cursor: pointer; opacity: .85; }
+.transport:disabled { visibility: hidden; }
+.status { position: absolute; top: 210%; left: -18%; right: -25%; margin: 0; color: #fff5de; background: #1f1d17bf; backdrop-filter: blur(5px); border-radius: 30px; padding: .4rem .6rem; font-size: max(8px, .65cqw); text-align: center; opacity: 0; transition: opacity .2s; }
+.console:hover .status, .console:focus-within .status { opacity: 1; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .disc { animation: none; } .status { transition: none; } }
+@media (max-width: 900px), (max-aspect-ratio: 23/20) { .label { font-size: 5px; } .transport { width: 44px; height: 44px; } .status { font-size: 9px; } }
+

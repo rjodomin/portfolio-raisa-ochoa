@@ -1,0 +1,34 @@
+.scene { position: relative; isolation: isolate; width: 100%; height: 100%; container-type: inline-size; overflow: hidden; background: #b09a81; --scene-ink: #111715; --sleeve-filter: none; --lamp-gain: 1; }
+.physicalPlane { position: absolute; isolation: isolate; container-type: inline-size; width: var(--plane-width); height: var(--plane-height); left: var(--plane-left); top: var(--plane-top); }
+.scene :focus-visible { outline: 2px solid #fff2d0; outline-offset: 4px; box-shadow: 0 0 0 5px #35412a; }
+.interior { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; z-index: -5; filter: brightness(var(--lamp-gain)); transition: opacity 1s, filter 1s; }
+.variant { opacity: 0; }
+.scene[data-ambient='morning'] [data-photo='day'], .scene[data-ambient='afternoon'] [data-photo='day'], .scene[data-ambient='cloudy'] [data-photo='cloudy'], .scene[data-ambient='night'] [data-photo='night'] { opacity: 1; }
+.unlitLamp { z-index: -3; mask-image: url('../assets/lamp-mask.svg'); mask-size: 100% 100%; mask-repeat: no-repeat; opacity: 0; }
+.scene[data-lamp='off'] { --lamp-gain: .94; }
+.scene[data-lamp='off'] .unlitLamp { opacity: 1; }
+.windowLight, .lampLight { position: absolute; inset: 0; pointer-events: none; transition: opacity .7s, background .7s; z-index: -2; }
+.windowLight { background: linear-gradient(110deg, #ffdeae14, transparent 55%); mix-blend-mode: soft-light; }
+.lampLight { background: radial-gradient(ellipse at 90% 69%, #ffd49420, #f7c27608 27%, transparent 55%); opacity: 0; mix-blend-mode: screen; }
+.scene[data-lamp='on'] .lampLight { opacity: 1; }
+.scene[data-ambient='morning'], .scene[data-ambient='afternoon'] { --day-opacity: 1; }
+.scene[data-ambient='morning'] .windowLight, .scene[data-ambient='afternoon'] .windowLight { background: linear-gradient(110deg, #e8f2f63b, transparent 60%); }
+.scene[data-ambient='cloudy'] { --cloudy-opacity: 1; }
+.scene[data-ambient='cloudy'] .windowLight { background: linear-gradient(110deg, #b5c4ce30, transparent 65%); }
+.scene[data-ambient='night'] { --scene-ink: #fff3dd; --night-opacity: 1; --disc-light: .65; --cover-ink: #fff0d5; }
+.scene[data-ambient='night'] .windowLight { background: linear-gradient(110deg, #293c5b15, transparent 55%); }
+.scene[data-ambient='night'] .unlitLamp { filter: brightness(.35) saturate(.7); }
+.scene[data-ambient='night'][data-lamp='off'] { --lamp-gain: .55; }
+.scene[data-ambient='night'][data-lamp='on'] .lampLight { background: radial-gradient(ellipse at 90% 69%, #ffb95b30, #fca1570d 35%, transparent 65%); }
+.framedNote { position: absolute; top: 1.2%; left: 83%; width: 6.4%; font-family: 'Segoe Print', 'Bradley Hand', cursive; font-size: 1.08cqw; line-height: 1.4; letter-spacing: .1em; transform: rotate(-6deg); color: #34271f; opacity: .85; pointer-events: none; }
+@media (max-width: 900px), (max-aspect-ratio: 23/20) {
+  .scene { height: auto; }
+  .physicalPlane { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: .9; }
+  .interior { object-fit: cover; object-position: right; height: auto; aspect-ratio: .9; top: auto; bottom: 0; }
+  .windowLight, .lampLight { inset: 0; height: 100%; }
+  /* El recorte mantiene solo la región física de la lámpara tras el recorte móvil. */
+  .unlitLamp { mask-size: auto 100%; mask-position: right; }
+  .framedNote { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .interior, .lampLight, .windowLight { transition: none; } }
+

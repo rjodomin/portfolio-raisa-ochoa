@@ -1,0 +1,11 @@
+:root {
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-background: #f7f5ef;
+  --color-text: #293129;
+  --color-muted: #62685e;
+  --color-olive: #596745;
+  --color-line: #dcded3;
+  --color-selection: #dce5cd;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}

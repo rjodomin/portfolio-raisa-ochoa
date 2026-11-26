@@ -1,0 +1,12 @@
+Herramienta: image_gen integrada (sin CLI ni API propia).
+Uso: fondo editorial fotográfico original para la habitación interactiva.
+Resultado integrado: interior-warm-v2.png. El primer resultado se conserva como
+interior-warm.png. La entrega usa interior-warm-v2.webp optimizado.
+La segunda pasada elimina el olivo alto y sus ramas sobre
+la pared de presentación, manteniendo encuadre, estantes, muebles y luz.
+
+Use case: photorealistic-natural.
+Asset type: photographic background asset for an interactive portfolio website, not a screenshot, no UI or typography.
+Create an exceptionally photorealistic premium interior design editorial photograph, wide landscape 1536x1024. Straight-on camera, warm cream plaster wall, late-afternoon natural light from tall black metal-framed window at far left (x0-16%). Olive-green textured velvet sofa cropped in bottom left (x0-37%, y65-100%), soft pink cushion, natural plants near window, coffee table cropped along bottom with books and ceramic coffee cup, warm oak wooden floor, realistic natural wood grain, delicate shadows from foliage on plaster.
+CRITICAL COMPOSITION: Keep wall area x20%-43%, y12%-61% EMPTY clean pale cream for HTML introduction text. Right-hand wall x48%-97% has TWO EMPTY horizontal wooden display shelves: shelf upper surface at exactly y35% and y57%, running x48%-99%. Above each shelf leave generous empty wall for three interactive record covers which will be added in HTML. No records, no sleeves on these two shelves. A third higher shelf at y13% has tasteful trailing pothos plants, camera, small books and a small abstract framed print, no lettering. Oak low credenza across bottom right x43%-100%, top surface at y79%, height to y95%, realistic storage of vinyl spines below. Credenza top EMPTY at x56%-89% to add an interactive turntable in HTML, also EMPTY x90%-99% for a lamp. No built in turntable or lamp. Avoid foreground occlusion of credenza surface.
+Colors cream beige natural walnut oak olive small coral pink accents, warm but neutral enough to recolor to morning/night using CSS. Magazine interior photography, physically convincing fabric, ceramic glaze, glass and wood, crisp focal plane, subtle optical depth, gentle highlights, realistic spatial shadows. NO text, NO watermarks, NO people, NO cartoon, NO flat vector illustration, NO web UI.

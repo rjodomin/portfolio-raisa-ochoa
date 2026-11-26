@@ -1,0 +1,18 @@
+.player { min-width: 0; display: flex; flex-direction: column; align-items: center; align-self: center; padding-top: 1rem; }
+.deck { position: relative; width: clamp(100px, 10vw, 170px); aspect-ratio: 1; }
+.disc { position: absolute; inset: 3%; border: 1px solid #e6cbb383; border-radius: 50%; background: repeating-radial-gradient(circle, #121212 0 1px, #292626 2px, #131313 3px, #0c0c0c 4px); box-shadow: 0 10px 16px #180f095e, inset 0 0 0 4px #171414; animation: mini-spin 4s linear infinite; }
+.disc::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(transparent, #f9ddc136, transparent 30% 55%, #ffffff1c, transparent 80%); }
+.label { position: absolute; z-index: 1; inset: 34%; border-radius: 50%; background: var(--record-color); color: #3c2730; display: grid; place-items: center; font-size: .5rem; text-align: center; box-shadow: inset 0 0 0 1px #ffffff30; }
+.label i { position: absolute; width: 4px; height: 4px; top: calc(50% - 2px); left: calc(50% - 2px); border-radius: 50%; background: #e0cdb6; }
+.arm { position: absolute; top: 2%; right: 7%; width: 5px; height: 65%; transform-origin: center 5%; transform: rotate(1deg); border-radius: 4px; background: linear-gradient(90deg, #26201d, #dbc4ac 50%, #403b36); box-shadow: 2px 2px 2px #0005; transition: transform .5s; }
+.arm::before { content: ''; position: absolute; width: 12px; height: 12px; left: -4px; top: -2px; background: radial-gradient(circle, #74675b, #171515 65%); border-radius: 50%; }
+.arm::after { content: ''; position: absolute; left: -2px; bottom: -3px; width: 9px; height: 17px; background: #2a2523; border-bottom: 3px solid #c4885a; border-radius: 2px; }
+.engaged { transform: rotate(25deg); }
+.title { width: 100%; margin: .75rem 0 .25rem; font-size: .7rem; line-height: 1.35; text-align: center; overflow-wrap: anywhere; }
+.controls { display: flex; justify-content: center; align-items: center; gap: .2rem; }
+.controls button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: transparent; color: inherit; border: 0; font-size: 1.4rem; cursor: pointer; border-radius: 50%; }
+.controls .toggle { background: #f5e6d6; color: #3e3028; font-size: 1.25rem; }
+.note { margin-top: .5rem; font-size: .6rem; text-align: center; }
+@keyframes mini-spin { to { transform: rotate(360deg); } }
+@media (max-width: 700px) { .player { display: grid; grid-template-columns: 80px 1fr; gap: .35rem 1rem; padding-top: 0; } .deck { grid-row: 1 / 4; width: 80px; } .title { margin: 0; } .controls { gap: .5rem; } .note { margin: 0; } }
+@media (prefers-reduced-motion: reduce) { .disc { animation: none; } .arm { transition: none; } }

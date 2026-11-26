@@ -1,0 +1,6 @@
+﻿.lamp { position: absolute; left: calc(85.2% * var(--crop-scale) - var(--crop-offset)); top: 59.6%; width: calc(10.5% * var(--crop-scale)); height: 19.3%; padding: 0; border: 0; background: none; border-radius: 50% 50% 10% 10%; cursor: pointer; z-index: 6; }
+.glow { position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(ellipse at 50% 30%, #fff1cd20, transparent 60%); opacity: 0; transition: opacity .25s; pointer-events: none; }
+.lamp:hover .glow { opacity: 1; }
+.label { position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: max(9px, .7cqw); color: #fff4dc; background: #29241cd9; border-radius: 20px; padding: .4rem .7rem; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.lamp:hover .label, .lamp:focus-visible .label { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .label, .glow { transition: none; } }

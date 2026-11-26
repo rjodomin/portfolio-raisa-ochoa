@@ -1,0 +1,9 @@
+.slot {
+  position: relative;
+  min-width: 0;
+  /* Protect the physical objects and navigation. Short desktop windows scroll. */
+  min-height: var(--minimum-scene-height, 560px);
+}
+@media (max-width: 900px), (max-aspect-ratio: 23/20) {
+  .slot { min-height: 0; }
+}
