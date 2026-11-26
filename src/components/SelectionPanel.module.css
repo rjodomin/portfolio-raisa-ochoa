@@ -54,6 +54,7 @@
   .introduction h2 { font-size: 1.65rem; }
   .eyebrow { margin-bottom: .65rem; }
   .description { display: none; }
+  .layout[data-contact='true'] .description { display: block; }
   .selected { padding-top: .65rem; }
   .selected p { font-size: .875rem; }
   .action { margin-top: .75rem; }

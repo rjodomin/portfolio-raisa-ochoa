@@ -63,6 +63,7 @@ export const collections: Record<PortfolioRecord['id'], RecordCollection> = {
     description: 'Formación y experiencia, reunidas en una colección.',
     entries: [pending('cv-pending', 'CV / Experiencia', 'Contenido provisional. La formación y la experiencia se añadirán cuando estén confirmadas.', clouds)] },
   contact: { eyebrow: 'Contacto', title: 'Seguimos en contacto',
-    description: 'El espacio para los canales de contacto del portfolio.',
-    entries: [pending('contact-pending', 'Canales de contacto', 'Contenido provisional. Los canales de contacto todavía no están publicados.')] },
+    description: '¿Tienes un proyecto en mente, una oportunidad profesional o simplemente quieres conectar? Estoy abierta a nuevas experiencias, colaboraciones y oportunidades para seguir aprendiendo y creciendo como desarrolladora.',
+    entries: [{ id: 'contact-pending', title: 'Contacto', summary: '', description: '', image: palms,
+      imageNote: '', color: '#eaa8b4', provisional: false }] },
 }
